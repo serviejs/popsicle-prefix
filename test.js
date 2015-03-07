@@ -1,16 +1,16 @@
-if (!global.Promise) {
-  require('es6-promise').polyfill();
-}
+/* global describe, it */
 
-var popsicle = require('popsicle');
-var expect   = require('chai').expect;
-var prefix   = require('./');
+require('es6-promise').polyfill()
+
+var popsicle = require('popsicle')
+var expect = require('chai').expect
+var prefix = require('./')
 
 describe('popsicle prefix', function () {
   it('should prefix all urls', function () {
     var req = popsicle('http://example.com')
-      .use(prefix('/proxy'));
+      .use(prefix('/proxy'))
 
-    expect(req.url).to.equal('/proxy/http://example.com');
-  });
-});
+    expect(req.url).to.equal('/proxy/http://example.com')
+  })
+})

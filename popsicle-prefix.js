@@ -1,9 +1,9 @@
+module.exports = prefixPopsicle
+
 function prefixPopsicle (prefix) {
-  prefix = prefix.replace(/\/$/, '');
+  prefix = prefix.replace(/\/$/, '')
 
   return function (request) {
-    request.url = prefix + '/' + request.url.replace(/^\//, '');
-  };
+    request.url = prefix + '/' + request.url.replace(/^\//, '')
+  }
 }
-
-module.exports = prefixPopsicle;
