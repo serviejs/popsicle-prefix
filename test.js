@@ -15,7 +15,7 @@ describe('popsicle prefix', function () {
   it('should prefix all urls', function () {
     return popsicle.get('http://example.com')
       .use(prefix('http://prefix.com'))
-      .then(res => {
+      .then(function (res) {
         expect(res.url).to.equal('http://prefix.com/http://example.com/')
       })
   })
