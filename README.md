@@ -5,7 +5,7 @@
 [![Build status][travis-image]][travis-url]
 [![Test coverage][coveralls-image]][coveralls-url]
 
-Prefix all Popsicle HTTP requests.
+> Prefix all Popsicle HTTP requests.
 
 ## Installation
 

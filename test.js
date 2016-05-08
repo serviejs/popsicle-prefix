@@ -3,14 +3,20 @@
 require('es6-promise').polyfill()
 
 var popsicle = require('popsicle')
+var nock = require('nock')
 var expect = require('chai').expect
 var prefix = require('./')
 
 describe('popsicle prefix', function () {
-  it('should prefix all urls', function () {
-    var req = popsicle('http://example.com')
-      .use(prefix('/proxy'))
+  nock('http://prefix.com')
+    .get('/http://example.com/')
+    .reply(200)
 
-    expect(req.url).to.equal('/proxy/http://example.com')
+  it('should prefix all urls', function () {
+    return popsicle.get('http://example.com')
+      .use(prefix('http://prefix.com'))
+      .then(res => {
+        expect(res.url).to.equal('http://prefix.com/http://example.com/')
+      })
   })
 })
