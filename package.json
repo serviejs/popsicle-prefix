@@ -1,6 +1,6 @@
 {
   "name": "popsicle-prefix",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Prefix all Popsicle HTTP requests",
   "main": "popsicle-prefix.js",
   "typings": "popsicle-prefix.d.ts",
