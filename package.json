@@ -1,6 +1,6 @@
 {
   "name": "popsicle-prefix",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Prefix all Popsicle HTTP requests",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
